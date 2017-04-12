@@ -4,8 +4,6 @@ Vec3 = function(x,y,z)
     this.x = x;
     this.y = y;
     this.z = z;
- //   this.max = x;
- //   this.min = x;
 }
 Vec3.prototype.max = function(){
     var max = this.x;
