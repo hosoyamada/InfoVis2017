@@ -28,9 +28,9 @@
 		    var mid = v.mid();
 		    var max = v.max();
 		    
-      document.write(min);
-      document.write(mid);
-      document.write(max);
+      document.write(x);
+      document.write(y);
+      document.write(z);
     </script>
   </body>
 </html>
