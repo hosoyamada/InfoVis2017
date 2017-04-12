@@ -1,11 +1,12 @@
+
 //Constructor
 Vec3 = function(x,y,z)
 {
     this.x = x;
     this.y = y;
     this.z = z;
- //   this.max = x;
- //   this.min = x;
+    this.max = x;
+    this.min = x;
 }
 Vec3.prototype.max = function(){
     var max = this.x;
@@ -28,5 +29,5 @@ Vec3.prototype.min = function(){
     return min;
 }
 Vec3.prototype.mid = function(){
-    return (this.x+this.y+this.z)-(this.max()+this.min());
+    return (this.x+this.y+this.z)-(this.max+this.min);
 }
