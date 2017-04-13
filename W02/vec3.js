@@ -6,32 +6,14 @@ Vec3 = function(x,y,z)
     this.z = z;
 }
 Vec3.prototype.max = function(){
-    /*
-	var max = this.x;
-    if(max < this.y){
-	max = this.y;
-    }
-    if(max < this.z){
-	max = this.z;
-    }
-    */
     return Math.max(this.x,this.y,this.z);
 }
 Vec3.prototype.min = function(){
-	
-    /*var min = this.x;
-    if(min > this.y){
-	min = this.y;
-    }
-    if(min > this.z){
-	min = this.z;
-    }*/
     return Math.min(this.x,this.y,this.z);
 }
 Vec3.prototype.mid = function(){
     return (this.x+this.y+this.z)-(this.max()+this.min());
 }
-
 AreaOfTriangle.prototype.gaiseki = function(va,vb){
     var ans = new Vec3(va.y*vb.z - va.z*vb.y , va.z*vb.x - va.x*vb.z , va.x*vb.y-va.y*vb.x);
     return ans;
