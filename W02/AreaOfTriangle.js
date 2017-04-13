@@ -21,7 +21,7 @@ AreaOfTriangle.prototype.gaiseki = function(va,vb){
     return ans;
 }
 AreaOfTriangle.prototype.ookisa = function(gaiseki){
-    var ans = sqrt(gaiseki.x*gaiseki.x+gaiseki.y*gaiseki.y+gaiseki.z*gaiseki.z);
+    var ans = Math.sqrt(gaiseki.x*gaiseki.x+gaiseki.y*gaiseki.y+gaiseki.z*gaiseki.z);
     return ans;
 }
 
