@@ -18,14 +18,15 @@ Vec3.prototype.max = function(){
     return Math.max(this.x,this.y,this.z);
 }
 Vec3.prototype.min = function(){
-    var min = this.x;
+	
+    /*var min = this.x;
     if(min > this.y){
 	min = this.y;
     }
     if(min > this.z){
 	min = this.z;
-    }
-    return min;
+    }*/
+    return Math.min(this.x,this.y,this.z);
 }
 Vec3.prototype.mid = function(){
     return (this.x+this.y+this.z)-(this.max()+this.min());
