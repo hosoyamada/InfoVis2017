@@ -4,6 +4,14 @@ Vec3 = function(x,y,z)
     this.y = y;
     this.z = z;
 }
+AreaOfTriangle.prototype.gaiseki = function(va,vb){
+    var ans = new Vec3(va.y*vb.z - va.z*vb.y , va.z*vb.x - va.x*vb.z , va.x*vb.y-va.y*vb.x);
+    return ans;
+}
+AreaOfTriangle.prototype.ookisa = function(gaiseki){
+    var ans = Math.sqrt(gaiseki.x*gaiseki.x+gaiseki.y*gaiseki.y+gaiseki.z*gaiseki.z);
+    return ans;
+}
 //Constructor
 AreaOfTriangle = function(v0,v1,v2)
 {
@@ -15,13 +23,5 @@ AreaOfTriangle = function(v0,v1,v2)
     var gaiseki = gaiseki(va,vb);
     var sqr = ookisa(gaiseki);
     return sqr/2;
-}
-AreaOfTriangle.prototype.gaiseki = function(va,vb){
-    var ans = new Vec3(va.y*vb.z - va.z*vb.y , va.z*vb.x - va.x*vb.z , va.x*vb.y-va.y*vb.x);
-    return ans;
-}
-AreaOfTriangle.prototype.ookisa = function(gaiseki){
-    var ans = Math.sqrt(gaiseki.x*gaiseki.x+gaiseki.y*gaiseki.y+gaiseki.z*gaiseki.z);
-    return ans;
 }
 
