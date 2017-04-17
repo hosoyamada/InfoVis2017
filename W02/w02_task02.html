@@ -5,9 +5,10 @@
   <body>
     <input type="button" onclick="window.alert('Clicked')" value="Click Me" id="click_me"/>
     <script>
-      var element = document.getElementById('click_me');
-      element.addEventListener('click',event);
-      function event(){ window.alert('Clicked!'); }
+      document.getElementById('click_me')
+      .addEventListener('click',function(){
+      window.alert('Clicked!');
+      });
     </script>
     <script src="vec3.js"></script>
     <script>
