@@ -48,15 +48,8 @@ Vec3.prototype.magnitude = function(){
 function AreaOfTriangle(v0,v1,v2)
 {
     
-    var a = v1.sub(v0);
-      document.write(a.x + a.y + a.z);
-      document.write("<br>");
     var b = v2.sub(v0);
-      document.write(b.x + b.y + b.z);
-      document.write("<br>");
     var c = a.cross(b);
-      document.write(c.x + c.y + c.z);
-      document.write("<br>");
     var s = c.magnitude();
       document.write(s);
       document.write("<br>");
