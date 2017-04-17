@@ -4,6 +4,12 @@ Vec3 = function(x,y,z)
     this.x = x;
     this.y = y;
     this.z = z;
+	return this;
+}
+Vec3.prototype.sub = function(v){
+    this.x -=  v.x
+    this.y -=  v.y
+    this.z -=  v.z
 }
 Vec3.prototype.max = function(){
     return Math.max(this.x,this.y,this.z);
@@ -34,3 +40,5 @@ AreaOfTriangle = function(v0,v1,v2)
     var sqr = ookisa(gaiseki);
     return sqr/2;
 }
+
+	return this;
