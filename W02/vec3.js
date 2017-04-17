@@ -51,7 +51,5 @@ function AreaOfTriangle(v0,v1,v2)
     var b = v2.sub(v0);
     var c = a.cross(b);
     var s = c.magnitude();
-      document.write(s);
-      document.write("<br>");
     return s/2;
 }
