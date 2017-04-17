@@ -33,10 +33,8 @@ Vec3.prototype.mid = function(){
 }
 
 Vec3.prototype.cross = function(v){
-    this.x = this.y*v.z - this.z*v.y;
-    this.y = this.z*v.x - this.x*v.z;
-    this.z = this.x*v.y - this.y*v.x;
-    return this;
+    var a = new Vec3(this.y*v.z - this.z*v.y,this.z*v.x - this.x*v.z,this.x*v.y - this.y*v.x)
+    return a;
 }
 
 Vec3.prototype.dot = function(v){
