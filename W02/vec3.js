@@ -6,28 +6,36 @@ Vec3 = function(x,y,z)
     this.z = z;
 	return this;
 }
+
 Vec3.prototype.sub = function(v){
-    this.x -=  v.x
-    this.y -=  v.y
-    this.z -=  v.z
+    this.x -=  v.x;
+    this.y -=  v.y;
+    this.z -=  v.z;
+    return this;
 }
+
 Vec3.prototype.max = function(){
     return Math.max(this.x,this.y,this.z);
 }
+
 Vec3.prototype.min = function(){
     return Math.min(this.x,this.y,this.z);
 }
+
 Vec3.prototype.mid = function(){
     return (this.x+this.y+this.z)-(this.max()+this.min());
 }
+
 AreaOfTriangle.prototype.gaiseki = function(va,vb){
-    var ans = new Vec3(va.y*vb.z - va.z*vb.y , va.z*vb.x - va.x*vb.z , va.x*vb.y-va.y*vb.x);
+    var ans = new Vec3(va.y*vb.z - va.z*vb.y , va.z*vb.x - va.x*vb.z , va.x*vb.y - va.y*vb.x);
     return ans;
 }
+
 AreaOfTriangle.prototype.ookisa = function(gaiseki){
     var ans = Math.sqrt(gaiseki.x*gaiseki.x+gaiseki.y*gaiseki.y+gaiseki.z*gaiseki.z);
     return ans;
 }
+
 //Constructor
 AreaOfTriangle = function(v0,v1,v2)
 {
@@ -40,5 +48,3 @@ AreaOfTriangle = function(v0,v1,v2)
     var sqr = ookisa(gaiseki);
     return sqr/2;
 }
-
-	return this;
