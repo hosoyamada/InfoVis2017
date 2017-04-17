@@ -4,6 +4,7 @@ Vec3 = function(x,y,z)
     this.x = x;
     this.y = y;
     this.z = z;
+    return this;
 }
 
 Vec3.prototype.sub = function(a){
@@ -42,6 +43,7 @@ Vec3.prototype.magnitude(){
 
 function AreaOfTriangle(v0,v1,v2)
 {
+    
     var a = v1.sub(v0);
     var b = v2.sub(v0);
     var c = a.cross(b);
