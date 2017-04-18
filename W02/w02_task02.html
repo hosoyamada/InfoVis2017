@@ -3,8 +3,8 @@
     <title>W02: Task 05</title>
   </head>
   <body>
-  <form name="form1" action="">
-    <input name="textBox1" type="text" value="" />
+  <form name="vector" action="">
+    <input name="x0" type="text" value="" />
     <input type="button" value="Exec" onclick="onButtonClick();" />
   </form>
   <hr />
@@ -27,10 +27,9 @@
   
   <script type="text/javascript" language="javascript">
     function onButtonClick() {
-        target = document.getElementById("output");
-          target.innerText = document.forms.form1.textBox1.value;
-          //target.innerText = document.form1.textBox1.value;//これでもOK
-        }
+    target = document.getElementById("output");
+    target.innerText = document.forms.vactor.x0.value;
+    }
   </script>
   
       <!--
