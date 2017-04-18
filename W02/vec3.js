@@ -47,14 +47,9 @@ Vec3.prototype.magnitude = function(){
 
 function AreaOfTriangle(v0,v1,v2)
 {
-    var a = v1.sub(v0);
-      document.write("a");    
+    var a = v1.sub(v0);  
     var b = v2.sub(v0);
-      document.write("b");
     var c = a.cross(b);
-      document.write("c");
     var s = c.magnitude();
-      document.write("d");
     return s/2;
-      document.write("e");
 }
