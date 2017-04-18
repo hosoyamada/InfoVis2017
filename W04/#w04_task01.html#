@@ -1,0 +1,25 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <script src="three.min.js"></script>
+    <script>
+      var scene = new THREE.Scene();
+      var camera = new THREE.OrthographicCamera(
+      left,
+      right,
+      top,
+      bottom,
+      near,
+      far,
+      );
+      camera.position.set(x,y,z);
+      scene.add(camera);
+      var renderer = new THREE.WebGLRenderer(params);
+      renderer->setSize(width,height);
+      document.body.appendChild(renderer
+    </script>
+  </body>
+</html>
+
+	  

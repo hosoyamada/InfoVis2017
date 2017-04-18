@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <title>W02: Task 02</title>
+  </head>
+  <body>
+  <form name="vector" action="">
+    v0<input name="x0" type="text" value="" />
+    <input name="y0" type="text" value="" />
+    <input name="z0" type="text" value="" /><br>
+    v1<input name="x1" type="text" value="" />
+    <input name="y1" type="text" value="" />
+    <input name="z1" type="text" value="" /><br>
+    v2<input name="x2" type="text" value="" />
+    <input name="y2" type="text" value="" />
+    <input name="z2" type="text" value="" /><br>
+    <input type="button" value="Exec" onclick="onButtonClick();" />
+  </form>
+  <hr />
+  <div id="output"></div>
+  <script src="vec3.js"></script>
+  
+  <script type="text/javascript" language="javascript">
+    function onButtonClick() {
+    target = document.getElementById("output");
+    var x0 = document.forms.vector.x0.value;
+    var y0 = document.forms.vector.y0.value;
+    var z0 = document.forms.vector.z0.value;
+    var x1 = document.forms.vector.x1.value;
+    var y1 = document.forms.vector.y1.value;
+    var z1 = document.forms.vector.z1.value;
+    var x2 = document.forms.vector.x2.value;
+    var y2 = document.forms.vector.y2.value;
+    var z2 = document.forms.vector.z2.value;
+      var v0 = new Vec3(x0,y0,z0);
+      var v1 = new Vec3(x1,y1,z1);
+      var v2 = new Vec3(x2,y2,z2);
+    target.innerText = "The result is " + AreaOfTriangle(v0,v1,v2);
+    }
+  </script>
+  </body>
+</html>
