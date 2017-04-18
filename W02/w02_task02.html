@@ -35,7 +35,7 @@
   
   <script type="text/javascript" language="javascript">
     function onButtonClick() {
-    //target = document.getElementById("output");
+    target = document.getElementById("output");
     var x0 = document.forms.vector.x0.value;
     var y0 = document.forms.vector.y0.value;
     var z0 = document.forms.vector.z0.value;
@@ -48,7 +48,7 @@
       var v0 = new Vec3(x0,y0,z0);
       var v1 = new Vec3(x1,y1,z1);
       var v2 = new Vec3(x2,y2,z2);
-    window.alert("The result is " + AreaOfTriangle(v0,v1,v2));
+    target.innerText = "The result is " + AreaOfTriangle(v0,v1,v2);
     }
   </script>
   
