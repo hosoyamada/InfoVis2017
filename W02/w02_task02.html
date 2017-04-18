@@ -1,6 +1,6 @@
 <html>
   <head>
-    <title>W02: Task 02</title>
+    <title>W02: Task 03</title>
   </head>
   <body>
   <form name="vector">
@@ -15,8 +15,6 @@
     <input name="z2" type="text" size="5" /><br>
     <input type="button" value="Exec" onclick="onButtonClick()" />
   </form>
-  <hr />
-  <div id="output"></div>
   <!--
     <form name="vector">
       v0<input type="text" name="x0" size="5"/>
@@ -37,10 +35,10 @@
     function onButtonClick() {
 
     
-          //target.innerText = document.forms.form1.textBox1.value;
+    //target.innerText = document.forms.form1.textBox1.value;
       document.write("1");
       document.write("1");
-      var x0 = document.forms.vector.x0.value;
+      var x0 = eval(document.forms.vector.x0.value);
       document.write("1");
       var y0=eval(form.vector.y0.value);
       document.write("1");
