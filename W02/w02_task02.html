@@ -3,7 +3,6 @@
     <title>W02: Task 03</title>
   </head>
   <body>
-    <script src="vec3.js"></script>
     <form name="vector">
       v0<input type="text" name="x0" size="5"/>
       <input type="text" name="y0" size="5"/>
@@ -14,11 +13,13 @@
       v2<input type="text" name="x2" size="5"/>
       <input type="text" name="y2" size="5"/>
       <input type="text" name="z2" size="5"/><br>
-      <input type="button" value="Click Me" id="click_me"/>
+      <input type="button" onclick="event()" value="Click Me" />
     </form>
+    
+    <script src="vec3.js"></script>
     <script>
-      document.getElementById('click_me')
-      .addEventListener('click',function(){
+      function event(){
+      
       var x0=eval(document.vector.x0.value);
       var y0=eval(document.vector.y0.value);
       var z0=eval(document.vector.z0.value);
@@ -45,7 +46,7 @@
       document.write("g");
       window.alert(AreaOfTriangle(v0,v1,v2));
       document.write("h");
-      });
+      }
     </script>
     <!--
     <script>
