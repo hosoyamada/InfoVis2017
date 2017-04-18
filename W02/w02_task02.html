@@ -13,12 +13,13 @@
       v2<input type="text" name="x2" size="5"/>
       <input type="text" name="y2" size="5"/>
       <input type="text" name="z2" size="5"/><br>
-      <input type="button" onclick="event()" value="Click Me" />
+      <input type="button" value="Click Me" id="click_me"/>
     </form>
     <script src="vec3.js"></script>
     <script>
-      function event(){
+      document.getElementById('click_me').addEventListener('click',function(){
       
+      document.write("1");
       var x0=eval(document.vector.x0.value);
       var y0=eval(document.vector.y0.value);
       var z0=eval(document.vector.z0.value);
@@ -29,15 +30,18 @@
       var y2=eval(document.vector.y2.value);
       var z2=eval(document.vector.z2.value);
       
+      document.write("1");
       var v0 = new Vec3(x0,y0,z0);
       var v1 = new Vec3(x1,y1,z1);
       var v2 = new Vec3(x2,y2,z2);
       
+      document.write("1");
       console.log(v0);
       console.log(v1);
       console.log(v2);
+      document.write("1");
       window.alert(AreaOfTriangle(v0,v1,v2));
-      }
+      });
     </script>
       <!--
     <script>
