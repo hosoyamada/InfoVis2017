@@ -1,8 +1,15 @@
 <html>
   <head>
-    <title>W02: Task 08</title>
+    <title>W02: Task 02</title>
   </head>
   <body>
+  <form name="form1" action="">
+    <input name="textBox1" type="text" value="" />
+    <input type="button" value="Exec" onclick="onButtonClick();" />
+  </form>
+  <hr />
+  <div id="output"></div>
+  <!--
     <form name="vector">
       v0<input type="text" name="x0" size="5"/>
       <input type="text" name="y0" size="5"/>
@@ -15,7 +22,18 @@
       <input type="text" name="z2" size="5"/><br>
       <input type="button" value="Click Me" id="click_me"/>
     </form>
-    <script src="vec3.js"></script>
+-->
+  <script src="vec3.js"></script>
+  
+  <script type="text/javascript" language="javascript">
+        function onButtonClick() {
+          target = document.getElementById("output");
+          target.innerText = document.forms.form1.textBox1.value;
+          //target.innerText = document.form1.textBox1.value;//これでもOK
+        }
+  </script>
+  
+      <!--
     <script>
       document.getElementById('click_me')
       .addEventListener('click',function(){
@@ -55,6 +73,7 @@
       window.alert(AreaOfTriangle(v0,v1,v2));
       });
     </script>
+    -->
       <!--
     <script>
       var x0=0,y0=0,z0=0;
@@ -73,7 +92,7 @@
       document.write("7");
       document.write(S);
       document.write("8");
--->
     </script> 
+    -->
   </body>
 </html>
