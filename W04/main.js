@@ -19,8 +19,6 @@ function main1()
 
     var geometry = new THREE.BoxGeometry( 1, 1, 1 );
     var material = new THREE.MeshBasicMaterial( { color: 0xffffff } );
-    material.vertexColors = THREE.VertexColors;
-    geometry.faces[0].vertexColors.push(new THREE.Color(1,0,0));
     var cube = new THREE.Mesh( geometry, material );
     scene.add( cube );
 
