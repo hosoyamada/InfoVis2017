@@ -40,10 +40,6 @@ function main()
     geometry.faces.color = new THREE.Color(1,0,0);
     
 
-
-    
-
-
     var renderer = new THREE.WebGLRenderer();
     renderer.setSize( width, height );
     document.body.appendChild( renderer.domElement );
