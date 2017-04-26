@@ -66,7 +66,15 @@ function main()
     geometry.vertices.push(v0);
     geometry.vertices.push(v1);
     geometry.vertices.push(v2);
+    geometry.vertices.push(v3);
+    geometry.vertices.push(v4);
+    geometry.vertices.push(v5);
     geometry.faces.push(f0);
+    geometry.faces.push(f1);
+    geometry.faces.push(f2);
+    geometry.faces.push(f3);
+    geometry.faces.push(f4);
+    geometry.faces.push(f5);
     
     //var geometry = new THREE.BoxGeometry( 1, 1, 1 );
     
