@@ -44,8 +44,8 @@ function main()
     renderer.setSize( width, height );
     document.body.appendChild( renderer.domElement );
 
-    var Triangle = new THREE.Mesh( geometry, material );
-    scene.add( Triangle );
+    var cube = new THREE.Mesh( geometry, material );
+    scene.add( cube );
 
     loop();
 
