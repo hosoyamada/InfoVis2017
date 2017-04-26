@@ -33,11 +33,12 @@ function main()
     geometry.vertices.push(v1);
     geometry.vertices.push(v2);
     geometry.faces.push(f0);
+    
     //var geometry = new THREE.BoxGeometry( 1, 1, 1 );
     
     var material = new THREE.MeshBasicMaterial();
     material.vertexColors = THREE.FaceColors;
-    geometry.faces.color = new THREE.Color(1,0,0);
+    geometry.faces.color = new THREE.Color(100,0,0);
     
 
     var renderer = new THREE.WebGLRenderer();
