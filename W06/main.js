@@ -11,9 +11,10 @@ function main()
     var far = 1000;
     var camera = new THREE.PerspectiveCamera( fov, aspect, near, far );
     camera.position.set(0,0,5);
+    scene.add( camera );
     
 
-    /*
+    
     var vertices = [
     [-1,1,0],
     [-1,-1,0]
@@ -28,22 +29,24 @@ function main()
     var id = faces[0];
     var f0 = new THREE.Face3(id[0],id[1],id[2]);
     var geometry = new THREE.Geometry();
+    //var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+    var material = new THREE.MeshBasicMaterial( { color: 0xffffff } );
+    material.vertexColors = THREE.FaceColors;
+    geometry.faces.color = new THREE.Color(1,0,0);
+    
     geometry.vertices.push(v0);
     geometry.vertices.push(v1);
     geometry.vertices.push(v2);
     geometry.faces.push(f0);
-*/
+
 
     
 
-    scene.add( camera );
 
     var renderer = new THREE.WebGLRenderer();
     renderer.setSize( width, height );
     document.body.appendChild( renderer.domElement );
 
-    var geometry = new THREE.BoxGeometry( 1, 1, 1 );
-    var material = new THREE.MeshBasicMaterial( { color: 0xffffff } );
     var cube = new THREE.Mesh( geometry, material );
     scene.add( cube );
 
