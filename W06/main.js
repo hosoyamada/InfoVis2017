@@ -89,7 +89,7 @@ function main()
     var material = new THREE.MeshBasicMaterial();
     material.vertexColors = THREE.FaceColors;
     geometry.faces[0].color = new THREE.Color(100,0,0);
-    
+    /*
     // Normal vectors for each face are automatically computed.
     geometry.computeFaceNormals();
     
@@ -125,6 +125,7 @@ function main()
     
     var p_NDC = new THREE.Vector3( x_NDC, y_NDC, 1 );
     var p_wld = p_NDC.unproject( camera );
+*/
 
     var renderer = new THREE.WebGLRenderer();
     renderer.setSize( width, height );
