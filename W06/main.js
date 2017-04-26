@@ -24,8 +24,8 @@ function main()
     [0,1,2]
     ];
     var v0 = new THREE.Vector3().fromArray(vertices[0]);
-    var v1 = new THREE.Vector3().fromArray(vertices[1]);
-    var v2 = new THREE.Vector3().fromArray(vertices[2]);
+    //var v1 = new THREE.Vector3().fromArray(vertices[1]);
+    //var v2 = new THREE.Vector3().fromArray(vertices[2]);
     var id = faces[0];
     var f0 = new THREE.Face3(id[0],id[1],id[2]);
     var geometry = new THREE.Geometry();
