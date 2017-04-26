@@ -45,13 +45,16 @@ function main()
 	[4,2,5]//±ü£²
     ];
     var v0 = new THREE.Vector3().fromArray(vertices[0]);
+    /*
     var v1 = new THREE.Vector3().fromArray(vertices[1]);
     var v2 = new THREE.Vector3().fromArray(vertices[2]);
     var v3 = new THREE.Vector3().fromArray(vertices[3]);
     var v4 = new THREE.Vector3().fromArray(vertices[4]);
     var v5 = new THREE.Vector3().fromArray(vertices[5]);
+*/
     var id = faces[0];
     var f0 = new THREE.Face3(id[0],id[1],id[2]);
+    /*
      id = faces[1];
     var f1 = new THREE.Face3(id[0],id[1],id[2]);
      id = faces[2];
@@ -62,19 +65,24 @@ function main()
     var f4 = new THREE.Face3(id[0],id[1],id[2]);
      id = faces[5];
     var f5 = new THREE.Face3(id[0],id[1],id[2]);
+*/
     var geometry = new THREE.Geometry();
     geometry.vertices.push(v0);
+    /*
     geometry.vertices.push(v1);
     geometry.vertices.push(v2);
     geometry.vertices.push(v3);
     geometry.vertices.push(v4);
     geometry.vertices.push(v5);
+*/
     geometry.faces.push(f0);
+    /*
     geometry.faces.push(f1);
     geometry.faces.push(f2);
     geometry.faces.push(f3);
     geometry.faces.push(f4);
     geometry.faces.push(f5);
+*/
     
     //var geometry = new THREE.BoxGeometry( 1, 1, 1 );
     
@@ -100,23 +108,23 @@ function main()
     var raycaster = new THREE.Raycaster( origin, direction );
     var intersects = raycaster.intersectObject( triangle );
     if ( intersects.length > 0 )
-{
-    intersects[0].face.color.setRGB( 1, 0, 0 );
-    intersects[0].object.geometry.colorsNeedUpdate = true;
-}
+    {
+	intersects[0].face.color.setRGB( 1, 0, 0 );
+	intersects[0].object.geometry.colorsNeedUpdate = true;
+    }
     
     var x_win = event.clientX;
     var y_win = event.clientY;
-
+    
     var vx = renderer.domElement.offsetLeft;
     var vy = renderer.domElement.offsetTop;
     var vw = renderer.domElement.width;
     var vh = renderer.domElement.height;
     var x_NDC = 2 * ( x_win - vx ) / vw - 1;
     var y_NDC = -( 2 * ( y_win - vy ) / vh - 1 );
-
+    
     var p_NDC = new THREE.Vector3( x_NDC, y_NDC, 1 );
-var p_wld = p_NDC.unproject( camera );
+    var p_wld = p_NDC.unproject( camera );
 
     var renderer = new THREE.WebGLRenderer();
     renderer.setSize( width, height );
