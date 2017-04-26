@@ -38,7 +38,8 @@ function main()
     
     var material = new THREE.MeshBasicMaterial();
     material.vertexColors = THREE.FaceColors;
-    geometry.faces.color = new THREE.Color(100,0,0);
+    geometry.faces[0].color = new THREE.Color(100,0,0);
+    
     
 
     var renderer = new THREE.WebGLRenderer();
