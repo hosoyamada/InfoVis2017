@@ -29,15 +29,16 @@ function main()
     var id = faces[0];
     var f0 = new THREE.Face3(id[0],id[1],id[2]);
     var geometry = new THREE.Geometry();
-    //var geometry = new THREE.BoxGeometry( 1, 1, 1 );
-    var material = new THREE.MeshBasicMaterial( { color: 0xffffff } );
-    material.vertexColors = THREE.FaceColors;
-    geometry.faces.color = new THREE.Color(1,0,0);
-    
     geometry.vertices.push(v0);
     geometry.vertices.push(v1);
     geometry.vertices.push(v2);
     geometry.faces.push(f0);
+    //var geometry = new THREE.BoxGeometry( 1, 1, 1 );
+    
+    var material = new THREE.MeshBasicMaterial();
+    material.vertexColors = THREE.FaceColors;
+    geometry.faces.color = new THREE.Color(1,0,0);
+    
 
 
     
@@ -47,8 +48,8 @@ function main()
     renderer.setSize( width, height );
     document.body.appendChild( renderer.domElement );
 
-    var cube = new THREE.Mesh( geometry, material );
-    scene.add( cube );
+    var Triangle = new THREE.Mesh( geometry, material );
+    scene.add( Triangle );
 
     loop();
 
