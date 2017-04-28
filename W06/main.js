@@ -185,8 +185,12 @@ function main2(){
 		      intersects[0].face.color.setRGB(0,1,0);
 		      intersects[0].object.geometry.colorsNeedUpdate = true;
 		  }
-		  else{
-		      intersects[0].face.color.setRGB(1,0,0);
+		  else if(intersects[0].face.color.g == 1){
+		      intersects[0].face.color.setRGB(0,0,1);
+		      intersects[0].object.geometry.colorsNeedUpdate = true;
+		  }
+		  else if(intersects[0].face.color.b == 1){
+		      intersects[0].face.color.setRGB(1,1,1);
 		      intersects[0].object.geometry.colorsNeedUpdate = true;
 		  }
 	      }
@@ -197,8 +201,8 @@ function main2(){
       function loop()
       {
 	  requestAnimationFrame( loop );
-	  cube.rotation.x += 0.003;
-	  cube.rotation.y += 0.003;
+	  cube.rotation.x += 0.002;
+	  cube.rotation.y += 0.002;
 	  renderer.render( scene, camera );
       }
 }
