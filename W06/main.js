@@ -201,7 +201,7 @@ function main2(){
       function loop()
       {
 	  requestAnimationFrame( loop );
-	  cube.rotation.x += 0.002;
+	  cube.rotation.x += 0.003;
 	  cube.rotation.y += 0.002;
 	  renderer.render( scene, camera );
       }
