@@ -1,8 +1,23 @@
 <html>
   <head>
-    <title>W02: Task 07</title>
+    <title>W02: Task 04</title>
   </head>
   <body>
+  <form name="vector" action="">
+    v0<input id="x0" type="text" value="" size="5" />
+    <input name="y0" type="text" value="" size="5" />
+    <input name="z0" type="text" value="" size="5" /><br>
+    v1<input name="x1" type="text" value="" size="5" />
+    <input name="y1" type="text" value="" size="5" />
+    <input name="z1" type="text" value="" size="5" /><br>
+    v2<input name="x2" type="text" value="" size="5" />
+    <input name="y2" type="text" value="" size="5" />
+    <input name="z2" type="text" value="" size="5" /><br>
+    <input type="button" value="Exec" onclick="onButtonClick();" />
+  </form>
+  <hr />
+  <div id="output"></div>
+  <!--
     <form name="vector">
       v0<input type="text" name="x0" size="5"/>
       <input type="text" name="y0" size="5"/>
@@ -15,14 +30,62 @@
       <input type="text" name="z2" size="5"/><br>
       <input type="button" value="Click Me" id="click_me"/>
     </form>
-    <script src="vec3.js"></script>
+-->
+  <script src="vec3.js"></script>
+  
+  <script type="text/javascript" language="javascript">
+    function onButtonClick() {
+
+    
+      document.write("1");
+      document.write("1");
+      var x0 = eval(document.forms.vector.x0.value);
+      document.write(x0);
+      document.write("1");
+      var y0=eval(form.vector.y0.value);
+      document.write("1");
+      var z0=eval(form.vector.z0.value);
+      document.write("1");
+      var x1=eval(document.vector.x1.value);
+      document.write("1");
+      var y1=eval(document.vector.y1.value);
+      document.write("1");
+      var z1=eval(document.vector.z1.value);
+      document.write("1");
+      var x2=eval(document.vector.x2.value);
+      document.write("1");
+      var y2=eval(document.vector.y2.value);
+      document.write("1");
+      var z2=eval(document.vector.z2.value);
+      document.write("1");
+      
+      document.write("1");
+      var v0 = new Vec3(x0,y0,z0);
+      var v1 = new Vec3(x1,y1,z1);
+      var v2 = new Vec3(x2,y2,z2);
+      
+      document.write("1");
+      console.log(v0);
+      console.log(v1);
+      console.log(v2);
+      document.write("1");
+    window.alert(AreaOfTriangle(v0,v1,v2));
+    
+    
+        //target = document.getElementById("output");
+          //target.innerText = document.forms.form1.textBox1.value;
+          //target.innerText = document.form1.textBox1.value;//これでもOK
+        }
+  </script>
+  
+      <!--
     <script>
       document.getElementById('click_me')
       .addEventListener('click',function(){
       
       document.write("1");
       document.write("1");
-      var x0=eval(form.vector.x0.value);
+      var x0 = document.vector.x0.value;
       document.write(x0);
       document.write("1");
       var y0=eval(form.vector.y0.value);
@@ -55,6 +118,7 @@
       window.alert(AreaOfTriangle(v0,v1,v2));
       });
     </script>
+    -->
       <!--
     <script>
       var x0=0,y0=0,z0=0;
@@ -73,7 +137,7 @@
       document.write("7");
       document.write(S);
       document.write("8");
--->
     </script> 
+    -->
   </body>
 </html>
