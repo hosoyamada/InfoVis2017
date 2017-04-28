@@ -55,18 +55,18 @@ function main1(){
     
     var material = new THREE.MeshLambertMaterial();
     material.vertexColors = THREE.FaceColors;
-    geometry.faces[0].color= new THREE.Color(1,1,1);
-    geometry.faces[1].color= new THREE.Color(1,1,1);
-    geometry.faces[2].color= new THREE.Color(1,1,1);
-    geometry.faces[3].color= new THREE.Color(1,1,1);
-    geometry.faces[4].color= new THREE.Color(1,1,1);
-    geometry.faces[5].color= new THREE.Color(1,1,1);
-    geometry.faces[6].color= new THREE.Color(1,1,1);
+    geometry.faces[0].color= new THREE.Color(0,0,0);
+    geometry.faces[1].color= new THREE.Color(1,0,0);
+    geometry.faces[2].color= new THREE.Color(0,1,0);
+    geometry.faces[3].color= new THREE.Color(0,0,1);
+    geometry.faces[4].color= new THREE.Color(1,1,0);
+    geometry.faces[5].color= new THREE.Color(1,0,1);
+    geometry.faces[6].color= new THREE.Color(0,1,1);
     geometry.faces[7].color= new THREE.Color(1,1,1);
-    geometry.faces[8].color= new THREE.Color(1,1,1);
-    geometry.faces[9].color= new THREE.Color(1,1,1);
-    geometry.faces[10].color= new THREE.Color(1,1,1);
-    geometry.faces[11].color= new THREE.Color(1,1,1);
+    geometry.faces[8].color= new THREE.Color(1,0,0);
+    geometry.faces[9].color= new THREE.Color(0,1,0);
+    geometry.faces[10].color= new THREE.Color(0,0,1);
+    geometry.faces[11].color= new THREE.Color(1,1,0);
     geometry.computeFaceNormals();
     
     var cube = new THREE.Mesh( geometry, material );
@@ -99,7 +99,7 @@ function main2(){
       var near = 1;
       var far = 1000;
       var camera = new THREE.PerspectiveCamera( fov, aspect, near, far );
-      camera.position.set( 0, 0, 5 );
+      camera.position.set( 0, 0, 10);
       scene.add( camera );
       
       var renderer = new THREE.WebGLRenderer();
