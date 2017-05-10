@@ -37,7 +37,23 @@ function main()
 	vertexShader: document.getElementById('cartoon.vert').text,
 	fragmentShader: document.getElementById('cartoon.frag').text,
 	uniforms: {
-	    light_position: {type: 'v3',value: light.position},
+
+        edgeColor: {
+            type: 'v4',
+            value: new THREE.Vector4(0, 0, 0, 0)
+        },
+        edge: {
+            type: 'i',
+            value: true
+        },
+        lightDirection: {
+            type: 'v3',
+            value: globalLight.position
+        },
+         texture: {
+            type: 't',
+            value: THREE.ImageUtils.loadTexture('textures/toon.png')
+        }
 	}  
     });
 
