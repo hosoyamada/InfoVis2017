@@ -53,7 +53,7 @@ function main()
          texture: {
             type: 't',
             value: THREE.ImageUtils.loadTexture('textures/toon.png')
-        }
+        },
 	    camera_position: {type: 'v3',value: camera_left.position}
 	}  
     });
