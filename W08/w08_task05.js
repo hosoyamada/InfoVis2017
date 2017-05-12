@@ -57,7 +57,7 @@ function main()
     var torus_knot_left = new THREE.Mesh( geometry, material_left );
     scene.add( torus_knot_left );
    // torus_knot_left.position.set(0,0,0);
-    torus_knot_right.position.set(10,10,0);
+//    torus_knot_right.position.set(10,10,0);
 
     loop();
 
