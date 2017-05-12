@@ -46,7 +46,7 @@ function main()
             type: 'i',
             value: true
         },
-        lightDirection: {
+        light_position: {
             type: 'v3',
             value:light.position
         },
@@ -54,6 +54,7 @@ function main()
             type: 't',
             value: THREE.ImageUtils.loadTexture('textures/toon.png')
         }
+	    camera_position: {type: 'v3',value: camera_left.position}
 	}  
     });
 

@@ -5,7 +5,7 @@
 <body>
 <script src="three.min.js"></script>
 
-<script type="x-shader/x-vertex" id="cartoon.frag">
+<script type="x-shader/x-vertex" id="cartoon.vert">
 //頂点シェーダ
 uniform float edgeWidthRatio;
 uniform bool edge;
@@ -36,7 +36,7 @@ void main() {
 } 
 </script>
 
-<script type="x-shader/x-vertex" id="cartoon.vert">
+<script type="x-shader/x-vertex" id="cartoon.frag">
 //フラグメントシェーダ
 uniform vec3 lightDirection;
 uniform sampler2D stepTexture;
