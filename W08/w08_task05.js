@@ -48,7 +48,7 @@ function main()
         },
         lightDirection: {
             type: 'v3',
-            value: globalLight.position
+            value:light.position
         },
          texture: {
             type: 't',
