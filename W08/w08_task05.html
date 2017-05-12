@@ -102,8 +102,6 @@ void main(){
 }
 </script>
 
-
-
 <script type="x-shader/x-vertex" id="phong.vert">
 varying vec3 point_color;
 varying vec4 point_position;
@@ -128,7 +126,6 @@ vec3 PhongReflection(vec3 C,vec3 L,vec3 N, vec3 V)
 
 	return C*(Ia+Id+Is);
 }
-
 
 void main()
 {
