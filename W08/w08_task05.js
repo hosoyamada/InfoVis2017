@@ -15,6 +15,11 @@ function main()
     camera_left.position.set( 0, 0, 5 );
     scene.add( camera_left );
 
+    var camera_right = new THREE.PerspectiveCamera( fov, aspect, near, far);
+    camera_right.position.set( 10, 10, 5);
+    scene.add( camera_right );
+
+    
     var light = new THREE.PointLight();
     light.position.set( 5, 5, 5 );
     scene.add( light );
@@ -29,35 +34,31 @@ function main()
     //var material = new THREE.MeshLambertMaterial();
     var material_left = new THREE.ShaderMaterial({
 	vertexColors: THREE.VertexColors,
-	vertexShader: document.getElementById('cartoon.vert').text,
-	fragmentShader: document.getElementById('cartoon.frag').text,
+	vertexShader: document.getElementById('gouraud.vert').text,
+	fragmentShader: document.getElementById('gouraud.frag').text,
 	uniforms: {
-
-        edgeColor: {
-            type: 'v4',
-            value: new THREE.Vector4(0, 0, 0, 0)
-        },
-        edge: {
-            type: 'i',
-            value: true
-        },
-        light_position: {
-            type: 'v3',
-            value:light.position
-        },
-         texture: {
-            type: 't',
-            value: THREE.ImageUtils.loadTexture('toon.png')
-        },
+	    light_position: {type: 'v3',value: light.position},
 	    camera_position: {type: 'v3',value: camera_left.position}
 	}  
     });
 
+    var material_right = new THREE.ShaderMaterial({
+	vertexColors: THREE.VertexColors,
+	vertexShader: document.getElementById('phong.vert').text,
+	fragmentShader: document.getElementById('phong.frag').text,
+	uniforms: {
+	    light_position: {type: 'v3',value: light.position},
+	    camera_position: {type: 'v3',value: camera_right.position}
+	}  
+    });
+   
 
     var torus_knot_left = new THREE.Mesh( geometry, material_left );
+    var torus_knot_right = new THREE.Mesh( geometry, material_right );
     scene.add( torus_knot_left );
-    torus_knot_left.position.set(0,0,0);
-//    torus_knot_right.position.set(10,10,0);
+    scene.add( torus_knot_right);
+   // torus_knot_left.position.set(0,0,0);
+    torus_knot_right.position.set(10,10,0);
 
     loop();
 
@@ -66,7 +67,9 @@ function main()
 
     renderer.setSize( screen_width, screen_height);
     camera_left.aspect = 0.5 * screen_width / screen_height;
+    camera_right.aspect = 0.5 * screen_width / screen_height;
     camera_left.updateProjectionMatrix();
+    camera_right.updateProjectionMatrix();
     
     function loop()
     {
@@ -75,6 +78,8 @@ function main()
         torus_knot_left.rotation.x += 0.01;
         torus_knot_left.rotation.y += 0.01;
 	
+	torus_knot_right.rotation.x += 0.01;
+        torus_knot_right.rotation.y += 0.01;
 
 
 	renderer.clear();
@@ -82,5 +87,7 @@ function main()
 	renderer.setViewport(0.1*screen_width, 0.2*screen_height, 0.8*width, 0.5*screen_height);
         renderer.render( scene, camera_left);
 
+	renderer.setViewport( 0.6*screen_width, 0.2*screen_height, 0.8*width, 0.5*screen_height);
+        renderer.render( scene, camera_right);
     }
 }
