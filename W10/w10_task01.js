@@ -82,7 +82,7 @@ function main()
     material.vertexColors = THREE.VertexColors;
     for ( var i = 0; i < nfaces; i++ )
     {
-	//var n = 255/0.7;
+	var n = 255/0.7;
         var id = faces[i];
        // var S0 = scalars[ id[0] ]; 
        // var S1 = scalars[ id[1] ]; 
