@@ -111,8 +111,8 @@ function main()
         var id = faces[i];
         var S0 = scalars[ id[0] ];
         var S1 = scalars[ id[1] ];
-        //var S2 = scalars[ id[2] ];
-        var S2 = Math.round((scalars[ id[2] ]-0.1)*n);
+        var S2 = scalars[ id[2] ];
+        //var S2 = Math.round((scalars[ id[2] ]-0.1)*n);
         var C0 = transS(S0); 
         var C1 = transS(S1); 
         var C2 = new THREE.Color().setHex( cmap[ S2 ][1] );
