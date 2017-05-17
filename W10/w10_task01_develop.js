@@ -95,9 +95,7 @@ function main()
   }
 
   function transS(S){
-    var n = 255/0.7
-    //var S = Normalization(S);
-    var S = (S-0.1)*n;
+    var S = Normalization(S);
     var S0 = Math.floor(S);
     if((S0+1) > (RESOLUTION-1)){//S0+1=S1 (<256)
       var S1 = S0;
