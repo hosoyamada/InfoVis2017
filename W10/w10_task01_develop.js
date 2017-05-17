@@ -34,7 +34,7 @@ function main()
   var scalars = [
     0.1,   // S0
     0.2, // S1
-    0.8  // S2
+    0.7  // S2
   ];
 
   // Create color map
@@ -85,6 +85,7 @@ function main()
     var C = new THREE.Color(R,G,B);
     return C;
   } 
+
   function transS(St){
     var n = 255/0.7;
     var St = (St-0.1)*n;
