@@ -89,7 +89,7 @@ function main()
     var n = 255/0.7;
     var St = (St-0.1)*n;
     var S0t = Math.floor(St);
-    if((S0t+1) > 255){//S0t+1=St1 (<256)
+    if((St+1) > 255){//S0t+1=St1 (<256)
       var S1t = S0t;
     }
     else{
