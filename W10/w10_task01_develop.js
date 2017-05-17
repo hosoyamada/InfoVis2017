@@ -85,21 +85,21 @@ function main()
         var C = new THREE.Color(R,G,B);
         return C;
        } 
-   function transS(S){
+   function transS(St){
         var n = 255/0.7;
-        var S = (S-0.1)*n;
-        var S0 = Math.floor(S);
-        if(S+1 >= 255){
-	  var S1 = S0;
+        var St = (St-0.1)*n;
+        var S0t = Math.floor(St);
+        if(S0t+1 > 255){//S0t+1=St1
+	  var S1t = S0t;
 	}
 	else{
-        var S1 = S+1;
+        var S1t = S0t+1;
 	}
-        var C0 = new THREE.Color().setHex( cmap[ S0 ][1] );
-        var C1 = new THREE.Color().setHex( cmap[ S1 ][1] );
-        var t = (S-S0)/(S1-S0); 
-	var C = linerInterpolation(C0,C1,t);
-	return C;
+        var C0t = new THREE.Color().setHex( cmap[ S0t ][1] );
+        var C1t = new THREE.Color().setHex( cmap[ S1t ][1] );
+        var t = (St-S0t)/(S1t-S0t); 
+	var Ct = linerInterpolation(C0t,C1t,t);
+	return Ct;
 	}
         
 
