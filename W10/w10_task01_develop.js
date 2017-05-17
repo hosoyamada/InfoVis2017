@@ -115,7 +115,8 @@ function main()
         //var S2 = Math.round((scalars[ id[2] ]-0.1)*n);
         var C0 = transS(S0); 
         var C1 = transS(S1); 
-        var C2 = new THREE.Color().setHex( cmap[ S2 ][1] );
+        var C2 = transS(S2); 
+        //var C2 = new THREE.Color().setHex( cmap[ S2 ][1] );
         geometry.faces[i].vertexColors.push( C0 );
         geometry.faces[i].vertexColors.push( C1 );
         geometry.faces[i].vertexColors.push( C2 );
