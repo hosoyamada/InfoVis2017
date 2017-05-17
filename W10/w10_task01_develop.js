@@ -39,14 +39,13 @@ function main()
 
     // Create color map
     var cmap = [];
-    for ( var i = 0; i < 256 ; i++ )
-    {	
-        var S = i/255.0; // [0,1]
+    for ( var i = 0; i < 256; i++ )
+    {
+        var S = i / 255.0; // [0,1]
         var R = Math.max( Math.cos( ( S - 1.0 ) * Math.PI ), 0.0 );
         var G = Math.max( Math.cos( ( S - 0.5 ) * Math.PI ), 0.0 );
         var B = Math.max( Math.cos( S * Math.PI ), 0.0 );
         var color = new THREE.Color( R, G, B );
-
         cmap.push( [ S, '0x' + color.getHexString() ] );
     }
 
@@ -77,19 +76,45 @@ function main()
         var face = new THREE.Face3( id[0], id[1], id[2] );
         geometry.faces.push( face );
     }
+    
+    // Liner interpolation
+   function linerInterpolation(C0,C1,t){
+        var R = (1-t)*C0.r + t*C1.r;
+        var G = (1-t)*C0.g + t*C1.g;
+        var B = (1-t)*C0.b + t*C1.b;
+        var C = new THREE.Color(R,G,B);
+        return C;
+       } 
+   function transS(S){
+        var n = 255/0.7;
+        var S = (S-0.1)*n;
+        var S0 = Math.floor(S);
+        if(S+1 >= 255){
+	  var S1 = S0;
+	}
+	else{
+        var S1 = S+1;
+	}
+        var C0 = new THREE.Color().setHex( cmap[ S0 ][1] );
+        var C1 = new THREE.Color().setHex( cmap[ S1 ][1] );
+        var t = (S-S0)/(S1-S0); 
+	var C = linerInterpolation(C0,C1,t);
+	return C;
+	}
+        
 
     // Assign colors for each vertex
     material.vertexColors = THREE.VertexColors;
     for ( var i = 0; i < nfaces; i++ )
     {
-	var n = 255/0.7;
+        var n = 255/0.7;
         var id = faces[i];
-        var S0 = Math.round((scalars[ id[0] ]-0.1)*n);
-        var S1 = Math.round((scalars[ id[1] ]-0.1)*n);
-        var S2 = Math.round((scalars[ id[2] ]-0.1)*n);
-        var C0 = new THREE.Color().setHex( cmap[ S0 ][1] );
-        var C1 = new THREE.Color().setHex( cmap[ S1 ][1] );
-        var C2 = new THREE.Color().setHex( cmap[ S2 ][1] );
+        var S0 = scalars[ id[0] ];
+        var S1 = scalars[ id[1] ];
+        var S2 = scalars[ id[2] ];
+        var C0 = transS(S0); 
+        var C1 = transS(S1); 
+        var C2 = transS(S2); 
         geometry.faces[i].vertexColors.push( C0 );
         geometry.faces[i].vertexColors.push( C1 );
         geometry.faces[i].vertexColors.push( C2 );
