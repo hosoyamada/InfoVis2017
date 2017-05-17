@@ -37,11 +37,15 @@ function main()
     0.8  // S2
   ];
 
+  var MAX_SCALAR = Math.max.apply(null,scalars);
+  var MIN_SCALAR = Math.min.apply(null,scalars);
+
   // Create color map
+  var R = 256;//resolution
   var cmap = [];
-  for ( var i = 0; i < 256; i++ )
+  for ( var i = 0; i < R; i++ )
   {
-    var S = i / 255.0; // [0,1]
+    var S = i / (R-1); // [0,1]
     var R = Math.max( Math.cos( ( S - 1.0 ) * Math.PI ), 0.0 );
     var G = Math.max( Math.cos( ( S - 0.5 ) * Math.PI ), 0.0 );
     var B = Math.max( Math.cos( S * Math.PI ), 0.0 );
@@ -86,11 +90,14 @@ function main()
     return C;
   } 
 
+  function Normalization(S){ //e.g. S:0.1~0.8 -> S:0~255
+    return (S-MIN_SCALAR)*((R-1)/(MAX_SCALAR-MIN_SCALAR));
+  }
+
   function transS(S){
-    var n = 255/0.7;
-    var S = (S-0.1)*n;
+    var S = Normalization(S);
     var S0 = Math.floor(S);
-    if((S0+1) > 255){//S0+1=S1 (<256)
+    if((S0+1) > (R-1)){//S0+1=S1 (<256)
       var S1 = S0;
       var t = 1;
     }
@@ -109,7 +116,6 @@ function main()
   material.vertexColors = THREE.VertexColors;
   for ( var i = 0; i < nfaces; i++ )
   {
-    var n = 255/0.7;
     var id = faces[i];
     var S0 = scalars[ id[0] ];
     var S1 = scalars[ id[1] ];
