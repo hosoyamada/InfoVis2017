@@ -116,9 +116,9 @@ function main()
     var t = index - index0;
     var C0 = new THREE.Color().setHex( cmap[ index0 ][1] );
     var C1 = new THREE.Color().setHex( cmap[ index1 ][1] );
-    var R = Interporate(C0.r,C1.r,t);
-    var G = Interporate(C0.g,C1.g,t);
-    var B = Interporate(C0.b,C1.b,t);
+    var R = Interpolate(C0.r,C1.r,t);
+    var G = Interpolate(C0.g,C1.g,t);
+    var B = Interpolate(C0.b,C1.b,t);
     return new THREE.Color(R,G,B);
   }
   
