@@ -15,18 +15,17 @@ function main()
     setup();
     screen.loop();
 
-    function setup()
+    function setup()   
     {
         var color = new KVS.Vec3( 0, 0, 0 );
         var box = new KVS.BoundingBox();
         box.setColor( color );
         box.setWidth( 2 );
 
-	//Initiation
 	var smin = 0;
-        var smax = volume.resolution.z - 1;
+        var smax = volume.resolution.z - 2;
 	var point_z = Math.round(KVS.Mix( smin, smax, 0.5 ));
-	var point = new THREE.Vector3(60,60,point_z);
+	var point = new THREE.Vector3(60,0,point_z);
 	var normal = new THREE.Vector3(0,0,1);
 	var surfaces = SlicePlane( volume, point, normal );
 	screen.scene.add( surfaces );
@@ -47,18 +46,20 @@ function main()
 
         document.getElementById('point_z')
             .addEventListener('mousemove', function() {
-                var value = document.getElementById('point_z').value;
-                var point_z = Math.round(KVS.Mix( smin, smax, value ));
+                var value = +document.getElementById('point_z').value;
+                //var point_z = Math.round(KVS.Mix( smin, smax, value ));
+                var point_z = KVS.Mix( smin, smax, value );
                 document.getElementById('label').innerHTML = "Point_z: " + Math.round( point_z );
             });
 
         document.getElementById('change-isovalue-button')
             .addEventListener('click', function() {
-                var value = document.getElementById('point_z').value;
+		screen.scene.remove( surfaces );
+                var value = +document.getElementById('point_z').value;
                 var point_z = Math.round(KVS.Mix( smin, smax, value ));
 		var point = new THREE.Vector3(60,60,point_z);
 		var normal = new THREE.Vector3(0,0,1);
-		var surfaces = SlicePlane( volume, point, normal );
+		surfaces = SlicePlane( volume, point, normal );
 		screen.scene.add( surfaces );
             });
 
