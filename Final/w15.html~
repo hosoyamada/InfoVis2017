@@ -11,11 +11,7 @@
 	<script src="KVSLobsterData.js"></script>
 	<script src="Bounds.js"></script>
 	<script src="SlicePlane.js"></script>	
-<<<<<<< HEAD
-	<script src="w12_main04.js"></script>
-=======
-	<script src="w12_task04.js"></script>
->>>>>>> 60b26ba83263f85952abaaaac557de029324bc98
+	<script src="w15.js"></script>
 	<script>
 	 main();
 	</script>
