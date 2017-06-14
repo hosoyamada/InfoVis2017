@@ -54,6 +54,9 @@ function setup()
   var line = KVS.ToTHREELine( box.exec( volume ) );
   screen.scene.add( line );
 
+  document.getElementById('status').innerHTML = "STATUS: Point(" + point_x + "," + point_y + "," + point_z + ") Normal_Vector(" + normal_x + "," + normal_y + "," + normal_z + ")";
+
+
   /*
      var smin = volume.min_value;
      var smax = volume.max_value;
@@ -73,8 +76,7 @@ function setup()
   //show point_y
   document.getElementById('label_py').innerHTML = "Point_y: " + Math.round( point_y );
   document.getElementById('point_y')
-    .addEventListener('mousemove', function() {
-        var value_py = +document.getElementById('point_y').value;
+    .addEventListener('mousemove', function() { var value_py = +document.getElementById('point_y').value;
         //var point_z = Math.round(KVS.Mix( smin, smax, value ));
         var point_y = KVS.Mix( pmin_y, pmax_y, value_py );
         document.getElementById('label_py').innerHTML = "Point_y: " + Math.round( point_y );
@@ -171,6 +173,8 @@ function setup()
         var normal = new THREE.Vector3(normal_x,normal_y,normal_z);
         surfaces = SlicePlane( volume, point, normal );
         screen.scene.add( surfaces );
+        
+        document.getElementById('status').innerHTML = "STATUS: Point(" + point_x + "," + point_y + "," + point_z + ") Normal_Vector(" + normal_x + "," + normal_y + "," + normal_z + ")";
         });
 
   document.addEventListener( 'mousemove', function() {
